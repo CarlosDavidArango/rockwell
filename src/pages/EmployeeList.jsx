@@ -36,6 +36,8 @@ export default function EmployeeList({ role }) {
   //sorting
   const [orderDirection, setOrderDirection] = useState('asc');
 
+
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -82,6 +84,7 @@ export default function EmployeeList({ role }) {
     try {
       const response = await logout();
       toast.success(response);
+      window.location.reload();
     } catch (error) {
       toast.error("Error logging out");
     }
