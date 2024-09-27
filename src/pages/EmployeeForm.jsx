@@ -63,7 +63,7 @@ export default function EmployeeForm({isView}) {
   
   //busca si el tipRate esta deshabilitado
 
-  const isTipRateDisabled =  ['waiter', 'dinning room manager'].includes(employee.JobTitle) ? false : true;
+  const isTipRateDisabled =  ['waiter', 'dining room manager'].includes(employee.JobTitle) ? false : true;
   
   
   //obtiene el empleado por id si no hay deja formulario vacio, llena el empleado inicial para evaluar si hayu cambios
@@ -98,7 +98,7 @@ export default function EmployeeForm({isView}) {
   useEffect(() => {
     const fetchCountries = async () => {
       try {
-        const response = await fetch('https://api.countrylayer.com/v2/all?access_key=4c54a5d5b613129d00c8d71180b9b2fe') //falta e
+        const response = await fetch('https://api.countrylayer.com/v2/all?access_key=4c54a5d5b613129d00c8d71180b9b2fe')
         const data = await response.json();
         if (data.error) {
           console.log("Error fetching countries")
@@ -202,12 +202,12 @@ export default function EmployeeForm({isView}) {
       isValid = false;
       toast.error('Employee must be at least 18 years old');
     }
-    if (employee.TipRate < 0.000000001 || employee.TipRate > 100) {
+    if (employee.TipRate < 0 || employee.TipRate > 100) {
       isValid = false;
       toast.error('Tip Rate must be between 0 and 100');
     }
 
-    if (employee.UserName === '' || employee.Name === '' || employee.Dob.seconds === 0 || employee.Area === '' || employee.JobTitle === '' || employee.Country === '' || employee.TipRate === 0 || employee.HireDate.seconds === 0) {
+    if (employee.UserName === '' || employee.Name === '' || employee.Dob.seconds === 0 || employee.Area === '' || employee.JobTitle === '' || employee.Country === ''  || employee.HireDate.seconds === 0) {
       isValid = false;
       toast.error('All fields are required');
     } 
@@ -369,14 +369,14 @@ export default function EmployeeForm({isView}) {
               type="submit"
               variant="contained"
             >
-              Confirmar
+              Confirm
             </Button>
             <Button
               variant="contained"
               color="error"
               onClick={handleOpen}
             >
-              {isView? "Regresar" : "Cancelar"}
+              {isView? "Return" : "Cancel"}
             </Button>
           </Grid>
       </Box>

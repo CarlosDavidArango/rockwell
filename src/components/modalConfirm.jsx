@@ -38,7 +38,7 @@ export default function ModalConfirm({isOpen, setIsOpen, handleReturn}) {
                 variant="contained"
                 onClick={handleReturn}
                 >
-                    Confirmar
+                    Yes, Cancel
                 </Button>
                 <Button
                 type="submit"
@@ -46,7 +46,7 @@ export default function ModalConfirm({isOpen, setIsOpen, handleReturn}) {
                 color="error"
                 onClick={handleClose}
                 >
-                    Cancelar
+                    Stay
                 </Button>
             </Grid>
             </Box>

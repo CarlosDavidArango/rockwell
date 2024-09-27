@@ -8,8 +8,8 @@ import MenuItem from '@mui/material/MenuItem';
 //mapeo de las posibles areas de trabajo, en una app de verdad se traerian de la db
 
 const areas =  [
-    {"name": "kitchen", "jobs": ["chef", "sous chef", "line cook", "prep cook"]},
-    {"name": "services", "jobs": ["waiter", "bartender", "host", "busser"]},
+    {"name": "kitchen", "jobs": ["chef", "sous chef", "dish washer", "cook"]},
+    {"name": "services", "jobs": ["waiter", "manager", "host", "tuttofare", "dining room manager"]},
 ]
 
 export default function CustomComboBox({label, value, onChange, nombreArea, disabled}) {
