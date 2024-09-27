@@ -1,5 +1,4 @@
-import {collection, doc, getDocs} from 'firebase/firestore';
-import {v4 as uuidv4} from 'uuid';
+import {collection,  getDocs} from 'firebase/firestore';
 import { db } from '../firebase/firebase';
 
 export const list = async (newCollection) => {

@@ -8,7 +8,6 @@ import { create } from "../api/functions/create";
 //importaciones de UI
 import { Select } from "@mui/material";
 import MenuItem from '@mui/material/MenuItem';
-import FormControlLabel from '@mui/material/FormControlLabel';
 import FormLabel from '@mui/material/FormLabel';
 import Grid from '@mui/material/Grid2';
 import OutlinedInput from '@mui/material/OutlinedInput';
@@ -22,7 +21,6 @@ import CustomComboBox from "../components/customComboBox";
 import { Toaster, toast } from 'sonner'
 //importa modal para confirmar en caso de que el formulario este sucio
 import ModalConfirm from "../components/modalConfirm";
-import { Api } from "@mui/icons-material";
 
 
 const FormGrid = styled(Grid)(() => ({
@@ -79,7 +77,7 @@ export default function EmployeeForm({isView}) {
           navigate('/');
         }, 3000);
       }else {
-        if (data == undefined) {
+        if (data === undefined) {
           setInitialEmployee({ Dob: { seconds: 0}, Area: '', Name: '', JobTitle : '', Country: '', TipRate: 0, HireDate: { seconds: 0 }, Status: true, UserName: '' })
           setIsConfirmEnabled(false);
 
@@ -94,13 +92,13 @@ export default function EmployeeForm({isView}) {
     }
     getEmployee();
 
-  }, [id]);
+  }, [id, navigate]);
 
   //obtiene los nombres de los paises
   useEffect(() => {
     const fetchCountries = async () => {
       try {
-        const response = await fetch('https://api.countrylayer.com/v2/all?access_key=4c54a5d5b613129d00c8d71180b9b2f') //falta e
+        const response = await fetch('https://api.countrylayer.com/v2/all?access_key=4c54a5d5b613129d00c8d71180b9b2fe') //falta e
         const data = await response.json();
         if (data.error) {
           console.log("Error fetching countries")

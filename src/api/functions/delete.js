@@ -1,5 +1,4 @@
-import {collection, doc, deleteDoc} from 'firebase/firestore';
-import {v4 as uuidv4} from 'uuid';
+import { doc, deleteDoc} from 'firebase/firestore';
 import { db } from '../firebase/firebase';
 
 export const deleteData = async (collection, id) => {

@@ -11,7 +11,6 @@ import Card from '@mui/material/Card';
 import { styled } from '@mui/material/styles';
 import { Toaster, toast } from 'sonner'
 import { singUp } from "../api/functions/auth";
-import { doc } from "firebase/firestore";
 
 
 
@@ -66,7 +65,7 @@ export default function SignUp() {
       return isValid
     } else {
       setEmailError(false);
-      return isValid;
+      
     }
     // contraseñas iguales
     if (!password.value || password.value !== confirmPassword.value) {

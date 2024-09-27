@@ -16,7 +16,7 @@ export default function CustomComboBox({label, value, onChange, nombreArea, disa
     const [jobs, setJobs] = useState([]);
 
     useEffect(() => {
-        setJobs(areas.find((a) => a.name == nombreArea).jobs);
+        setJobs(areas.find((a) => a.name === nombreArea).jobs);
     }, [nombreArea]);
 
 

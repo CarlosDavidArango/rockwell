@@ -11,7 +11,6 @@ import Card from '@mui/material/Card';
 import { styled } from '@mui/material/styles';
 import { Toaster, toast } from 'sonner'
 import { singIn } from "../api/functions/auth";
-import SingUp from "./SignUp";
 
 
 
