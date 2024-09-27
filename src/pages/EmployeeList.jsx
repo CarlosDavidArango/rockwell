@@ -1,4 +1,5 @@
 import { React, useEffect, useState } from "react";
+import { useNavigate } from 'react-router-dom';
 import { list } from "../api/functions/list";
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -36,6 +37,9 @@ export default function EmployeeList({ role }) {
   //sorting
   const [orderDirection, setOrderDirection] = useState('asc');
 
+
+  const navigate = useNavigate();
+  
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -82,6 +86,7 @@ export default function EmployeeList({ role }) {
     try {
       const response = await logout();
       toast.success(response);
+      navigate('/');
     } catch (error) {
       toast.error("Error logging out");
     }
